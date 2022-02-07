@@ -62,6 +62,7 @@ For standard 3 tasks in NYUv2 (without dense prediction task) in the multi-task 
 
 | Method               | Sem. Seg. (mIOU) | Depth (aErr.) | Normal (mDist.) | Delta MTL |
 |----------------------|------------------|---------------|-----------------|-----------|
+|Single | 43.37	| 52.24	        |22.40| - |
 | Equal	               | 44.64	           | 43.32	        | 24.48	          | +3.57%    |
 | DWA	                 | 45.14            | 	43.06        | 	24.17          | 	+4.58%   |
 | GradDrop             | 45.39            | 43.23         | 24.18           | +4.65%    |
