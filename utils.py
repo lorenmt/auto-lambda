@@ -68,7 +68,7 @@ def get_weight_str(weight, tasks):
     """
     weight_str = 'Task Weighting | '
     for i, task_id in enumerate(tasks):
-        weight_str += '{} {:.02f} '.format(task_id.title(), weight[i])
+        weight_str += '{} {:.04f} '.format(task_id.title(), weight[i])
     return weight_str
 
 
