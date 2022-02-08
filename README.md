@@ -1,8 +1,8 @@
 # Auto-Lambda
-This repository contains the source code of Auto-Lambda and baselines from the paper, [Auto-Lambda: Disentangling Dynamic Task Relationships](https://arxiv.org/abs/2202.03091). See more discussion in our [project page](https://shikun.io/projects/auto-lambda). 
+This repository contains the source code of Auto-Lambda and baselines from the paper, [Auto-Lambda: Disentangling Dynamic Task Relationships](https://arxiv.org/abs/2202.03091). We encourage readers to check out our [project page](https://shikun.io/projects/auto-lambda), including more interesting discussions and insights which are not covered in our technical paper.
 
 ## Multi-task Methods
-We cover all weighting and gradient-based baselines presented in the paper for computer vision tasks: Dense Prediction Tasks (for NYUv2 and CityScapes) and Multi-domain Classification Tasks (for CIFAR-100). 
+We implement all weighting and gradient-based baselines presented in the paper for computer vision tasks: Dense Prediction Tasks (for NYUv2 and CityScapes) and Multi-domain Classification Tasks (for CIFAR-100). 
 
 Specifically, we cover the implementation of these following multi-task optimisation methods:
 
@@ -10,7 +10,7 @@ Specifically, we cover the implementation of these following multi-task optimisa
 - **Equal** - All task weightings are 1. `-weight equal`
 - **Uncertainty** - [https://arxiv.org/abs/1705.07115](https://arxiv.org/abs/1705.07115) `-weight uncert`
 - **Dynamic Weight Average** - [https://arxiv.org/abs/1803.10704](https://arxiv.org/abs/1803.10704) `-weight dwa`
-- **Auto-Lambda** - Our Proposed Method. `-weight autol`
+- **Auto-Lambda** - Our approach. `-weight autol`
 
 ### Gradient-based:
 - **GradDrop** -  [https://arxiv.org/abs/2010.06808](https://arxiv.org/abs/2010.06808) `-grad_method graddrop`
