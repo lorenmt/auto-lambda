@@ -41,7 +41,7 @@ elif opt.network == 'mtan':
 
 
 total_epoch = 200
-optimizer = optim.SGD(model.parameters(), lr=0.01, weight_decay=1e-4, momentum=0.9)
+optimizer = optim.SGD(model.parameters(), lr=0.1, weight_decay=1e-4, momentum=0.9)
 scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, total_epoch)
 
 # define dataset
