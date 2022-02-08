@@ -225,6 +225,24 @@ class MTANDeepLabv3(nn.Module):
                 out[i] = out[i] / torch.norm(out[i], p=2, dim=1, keepdim=True)
         return out
 
+    def shared_modules(self):
+        return [self.shared_conv,
+                self.shared_layer1_b,
+                self.shared_layer1_t,
+                self.shared_layer2_b,
+                self.shared_layer2_t,
+                self.shared_layer3_b,
+                self.shared_layer3_t,
+                self.shared_layer4_b,
+                self.shared_layer4_t,
+                self.encoder_block_att_1,
+                self.encoder_block_att_2,
+                self.encoder_block_att_3]
+
+    def zero_grad_shared_modules(self):
+        for mm in self.shared_modules():
+            mm.zero_grad()
+
 
 # --------------------------------------------------------------------------------
 # Define Split DeepLab
