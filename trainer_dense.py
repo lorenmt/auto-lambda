@@ -69,7 +69,7 @@ if opt.weight in ['dwa', 'equal']:
 
 if opt.weight == 'autol':
     params = model.parameters()
-    autol = AutoLambda(model, device, train_tasks, train_tasks, opt.autol_init)
+    autol = AutoLambda(model, device, train_tasks, pri_tasks, opt.autol_init)
     meta_weight_ls = np.zeros([total_epoch, len(train_tasks)], dtype=np.float32)
     meta_optimizer = optim.Adam([autol.meta_weights], lr=opt.autol_lr)
 
@@ -237,7 +237,7 @@ for index in range(total_epoch):
     scheduler.step()
 
     print('Epoch {:04d} | TRAIN:{} || TEST:{} | Best: {} {:.4f}'
-          .format(index, train_str, test_str, opt.task, test_metric.get_best_performance(opt.task)))
+          .format(index, train_str, test_str, opt.task.title(), test_metric.get_best_performance(opt.task)))
 
     if opt.weight == 'autol':
         meta_weight_ls[index] = autol.meta_weights.detach().cpu()
