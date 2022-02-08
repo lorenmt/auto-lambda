@@ -1,5 +1,5 @@
 # Auto-Lambda
-This repository contains the source code of Auto-Lambda and baselines from the paper, "Auto-Lambda: Disentangling Dynamic Task Relationships". See more discussion in our [project page](https://shikun.io/projects/auto-lambda). 
+This repository contains the source code of Auto-Lambda and baselines from the paper, [Auto-Lambda: Disentangling Dynamic Task Relationships](https://arxiv.org/abs/2202.03091). See more discussion in our [project page](https://shikun.io/projects/auto-lambda). 
 
 ## Multi-task Methods
 We cover all weighting and gradient-based baselines presented in the paper for computer vision tasks: Dense Prediction Tasks (for NYUv2 and CityScapes) and Multi-domain Classification Tasks (for CIFAR-100). 
@@ -80,7 +80,7 @@ If you found this code/work to be useful in your own research, please considerin
 @article{liu2022auto-lambda,
   title={Auto-Lambda: Disentangling Dynamic Task Relationships},
   author={Liu, Shikun and James, Stephen and Davison, Andrew J and Johns, Edward},
-  journal={arXiv preprint},
+  journal={arXiv preprint arXiv:2202.03091},
   year={2022}
 }
 ```

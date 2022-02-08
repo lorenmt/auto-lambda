@@ -36,7 +36,7 @@ print('Training Task: {} - {} in Single Task Learning Mode with {}'
 
 if opt.network == 'split':
     model = MTLDeepLabv3(train_tasks).to(device)
-if opt.network == 'mtan':
+elif opt.network == 'mtan':
     model = MTANDeepLabv3(train_tasks).to(device)
 
 
