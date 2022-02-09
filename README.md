@@ -1,31 +1,33 @@
 # Auto-Lambda
-This repository contains the source code of Auto-Lambda and baselines from the paper, [Auto-Lambda: Disentangling Dynamic Task Relationships](https://arxiv.org/abs/2202.03091). We encourage readers to check out our [project page](https://shikun.io/projects/auto-lambda), including more interesting discussions and insights which are not covered in our technical paper.
+This repository contains the source code of Auto-Lambda and baselines from the paper, [Auto-Lambda: Disentangling Dynamic Task Relationships](https://arxiv.org/abs/2202.03091). 
+
+We encourage readers to check out our [project page](https://shikun.io/projects/auto-lambda), including more interesting discussions and insights which are not covered in our technical paper.
 
 ## Multi-task Methods
 We implemented all weighting and gradient-based baselines presented in the paper for computer vision tasks: Dense Prediction Tasks (for NYUv2 and CityScapes) and Multi-domain Classification Tasks (for CIFAR-100). 
 
-Specifically, we cover the implementation of these following multi-task optimisation methods:
+Specifically, we have covered the implementation of these following multi-task optimisation methods:
 
 ### Weighting-based:
-- **Equal** - All task weightings are 1. `-weight equal`
-- **Uncertainty** - [https://arxiv.org/abs/1705.07115](https://arxiv.org/abs/1705.07115) `-weight uncert`
-- **Dynamic Weight Average** - [https://arxiv.org/abs/1803.10704](https://arxiv.org/abs/1803.10704) `-weight dwa`
-- **Auto-Lambda** - Our approach. `-weight autol`
+- **Equal** - All task weightings are 1. `--weight equal`
+- **Uncertainty** - [https://arxiv.org/abs/1705.07115](https://arxiv.org/abs/1705.07115) `--weight uncert`
+- **Dynamic Weight Average** - [https://arxiv.org/abs/1803.10704](https://arxiv.org/abs/1803.10704) `--weight dwa`
+- **Auto-Lambda** - Our approach. `--weight autol`
 
 ### Gradient-based:
-- **GradDrop** -  [https://arxiv.org/abs/2010.06808](https://arxiv.org/abs/2010.06808) `-grad_method graddrop`
-- **PCGrad** - [https://arxiv.org/abs/2001.06782](https://arxiv.org/abs/2001.06782) `-grad_method pcgrad`
-- **CAGrad** - [https://arxiv.org/abs/2110.14048](https://arxiv.org/abs/2110.14048) `-grad_method cagrad`
+- **GradDrop** -  [https://arxiv.org/abs/2010.06808](https://arxiv.org/abs/2010.06808) `--grad_method graddrop`
+- **PCGrad** - [https://arxiv.org/abs/2001.06782](https://arxiv.org/abs/2001.06782) `--grad_method pcgrad`
+- **CAGrad** - [https://arxiv.org/abs/2110.14048](https://arxiv.org/abs/2110.14048) `--grad_method cagrad`
 
 *Note: Applying a combination of both weighting and gradient-based methods can further improve performance.*
 
 ## Datasets
-We followed the same data pre-processing following our previous project: [MTAN](https://github.com/lorenmt/mtan) which experimented on:
+We applied the same data pre-processing following our previous project: [MTAN](https://github.com/lorenmt/mtan) which experimented on:
 
 - [**NYUv2 [3 Tasks]**](https://www.dropbox.com/sh/86nssgwm6hm3vkb/AACrnUQ4GxpdrBbLjb6n-mWNa?dl=0)  - 13 Class Segmentation + Depth Estimation + Surface Normal. [288 x 384] Resolution.
 - [**CityScapes [3 Tasks]**](https://www.dropbox.com/sh/qk3cr18d55d08gj/AAA5OCTPNFDEDk5fZsmCfmrAa?dl=0) - 19 Class Segmentation + 10 Class Part Segmentation + Disparity (Inverse Depth) Estimation. [256 x 512] Resolution.
 
-*Note: We have included a new task: [Part Segmentation](https://github.com/pmeletis/panoptic_parts) for CityScapes dataset. The pre-processing file for CityScapes has also included in the `dataset` folder.*
+*Note: We have included a new task: [Part Segmentation](https://github.com/pmeletis/panoptic_parts) for CityScapes dataset. The pre-processing file for CityScapes has also been included in the `dataset` folder.*
 
 
 ## Experiments
@@ -40,8 +42,8 @@ All experiments were written in `PyTorch 1.7` and can be trained with different 
 | `task`        | choose primary tasks: `seg, depth, normal` for NYUv2, `seg, part_seg, disp` for CityScapes, `all`: a combination of all standard 3 tasks | only available in dense prediction tasks                                            |
 | `with_noise`  | toggle on to add noise prediction task for training (to evaluate robustness in auxiliary learning setting)                               | only available in dense prediction tasks                                            |
 | `subset_id`   | choose domain ID for CIFAR-100, choose `-1` for the multi-task learning setting                                                          | only available in CIFAR-100 tasks                                                   |
-| `autol_init`  | initialisation of Auto-Lambda, default `0.1`                                                                                             | only available when applied Auto-lambda as weighting method                         |
-| `autol_lr`    | learning rate of Auto-Lambda, default `1e-4`  for NYUv2 and `3e-5` for CityScapes                                                        | only available when applied Auto-lambda as weighting method                         |
+| `autol_init`  | initialisation of Auto-Lambda, default `0.1`                                                                                             | only available when applying Auto-Lambda                        |
+| `autol_lr`    | learning rate of Auto-Lambda, default `1e-4`  for NYUv2 and `3e-5` for CityScapes                                                        | only available when applying Auto-Lambda                       |
 
 Training Auto-Lambda in Multi-task / Auxiliary Learning Mode:
 ```
