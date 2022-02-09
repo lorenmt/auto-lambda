@@ -41,7 +41,7 @@ if opt.weight == 'autol':
     params = model.parameters()
     autol = AutoLambda(model, device, train_tasks, pri_tasks, opt.autol_init)
     meta_weight_ls = np.zeros([total_epoch, len(train_tasks)], dtype=np.float32)
-    meta_optimizer = optim.Adam([autol.meta_weights], lr=3e-4)
+    meta_optimizer = optim.Adam([autol.meta_weights], lr=opt.autol_lr)
 
 elif opt.weight in ['dwa', 'equal']:
     T = 2.0  # temperature used in dwa

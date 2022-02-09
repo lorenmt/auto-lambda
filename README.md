@@ -2,7 +2,7 @@
 This repository contains the source code of Auto-Lambda and baselines from the paper, [Auto-Lambda: Disentangling Dynamic Task Relationships](https://arxiv.org/abs/2202.03091). We encourage readers to check out our [project page](https://shikun.io/projects/auto-lambda), including more interesting discussions and insights which are not covered in our technical paper.
 
 ## Multi-task Methods
-We implement all weighting and gradient-based baselines presented in the paper for computer vision tasks: Dense Prediction Tasks (for NYUv2 and CityScapes) and Multi-domain Classification Tasks (for CIFAR-100). 
+We implemented all weighting and gradient-based baselines presented in the paper for computer vision tasks: Dense Prediction Tasks (for NYUv2 and CityScapes) and Multi-domain Classification Tasks (for CIFAR-100). 
 
 Specifically, we cover the implementation of these following multi-task optimisation methods:
 
@@ -58,7 +58,7 @@ python trainer_cifar_single.py --subset_id [PRIMARY_DOMAIN_ID] --gpu 0   # for C
 *Note: All experiments in the original paper were trained from scratch without pre-training.*
 
 ## Benchmark
-For standard 3 tasks in NYUv2 (without dense prediction task) in the multi-task learning setting with Split architecture, you should expect the following results.
+For standard 3 tasks in NYUv2 (without dense prediction task) in the multi-task learning setting with Split architecture, please follow the results below.
 
 | Method               | Sem. Seg. (mIOU) | Depth (aErr.) | Normal (mDist.) | Delta MTL |
 |----------------------|------------------|---------------|-----------------|-----------|
@@ -72,6 +72,7 @@ For standard 3 tasks in NYUv2 (without dense prediction task) in the multi-task 
 | Auto-Lambda          | 	47.17           | 	40.97	       | 23.68           | 	+8.21%   |
 | Auto-Lambda + CAGrad | 	48.26           | 	39.82	       | 22.81           | 	+11.07%  |
 
+*Note: The results were averaged across three random seeds. You should expect the error range less than +/-1%.*
 
 ## Citation
 If you found this code/work to be useful in your own research, please considering citing the following:
