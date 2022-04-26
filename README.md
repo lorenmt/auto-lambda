@@ -60,7 +60,7 @@ python trainer_cifar_single.py --subset_id [PRIMARY_DOMAIN_ID] --gpu 0   # for C
 *Note: All experiments in the original paper were trained from scratch without pre-training.*
 
 ## Benchmark
-For standard 3 tasks in NYUv2 (without dense prediction task) in the multi-task learning setting with Split architecture, please follow the results below.
+For standard 3 tasks in NYUv2 (without noise prediction task) in the multi-task learning setting with Split architecture, please follow the results below.
 
 | Method               | Type | Sem. Seg. (mIOU) | Depth (aErr.) | Normal (mDist.) | Delta MTL |
 |----------------------|-------|-----------|---------------|-----------------|-----------|
