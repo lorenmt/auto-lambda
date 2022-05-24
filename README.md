@@ -80,11 +80,11 @@ For standard 3 tasks in NYUv2 (without noise prediction task) in the multi-task 
 If you found this code/work to be useful in your own research, please considering citing the following:
 
 ```
-@article{liu2022auto-lambda,
-  title={Auto-Lambda: Disentangling Dynamic Task Relationships},
-  author={Liu, Shikun and James, Stephen and Davison, Andrew J and Johns, Edward},
-  journal={arXiv preprint arXiv:2202.03091},
-  year={2022}
+@article{liu2022auto_lambda,
+    title={Auto-Lambda: Disentangling Dynamic Task Relationships},
+    author={Liu, Shikun and James, Stephen and Davison, Andrew J and Johns, Edward},
+    journal={Transactions on Machine Learning Research},
+    year={2022}
 }
 ```
 
