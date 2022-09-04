@@ -27,7 +27,7 @@ We applied the same data pre-processing following our previous project: [MTAN](h
 - [**NYUv2 [3 Tasks]**](https://www.dropbox.com/sh/86nssgwm6hm3vkb/AACrnUQ4GxpdrBbLjb6n-mWNa?dl=0)  - 13 Class Segmentation + Depth Estimation + Surface Normal. [288 x 384] Resolution.
 - [**CityScapes [3 Tasks]**](https://www.dropbox.com/sh/qk3cr18d55d08gj/AAA5OCTPNFDEDk5fZsmCfmrAa?dl=0) - 19 Class Segmentation + 10 Class Part Segmentation + Disparity (Inverse Depth) Estimation. [256 x 512] Resolution.
 
-*Note: We have included a new task: [Part Segmentation](https://github.com/pmeletis/panoptic_parts) for CityScapes dataset. The pre-processing file for CityScapes has also been included in the `dataset` folder.*
+*Note: We have included a new task: [Part Segmentation](https://github.com/pmeletis/panoptic_parts) for CityScapes dataset. Please install the `pip install panoptic_parts` for CityScapes experiments.  The pre-processing file for CityScapes has also been included in the `dataset` folder.*
 
 
 ## Experiments
