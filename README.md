@@ -60,19 +60,19 @@ python trainer_cifar_single.py --subset_id [PRIMARY_DOMAIN_ID] --gpu 0   # for C
 *Note: All experiments in the original paper were trained from scratch without pre-training.*
 
 ## Benchmark
-For standard 3 tasks in NYUv2 (without dense prediction task) in the multi-task learning setting with Split architecture, please follow the results below.
+For standard 3 tasks in NYUv2 (without noise prediction task) in the multi-task learning setting with Split architecture, please follow the results below.
 
-| Method               | Sem. Seg. (mIOU) | Depth (aErr.) | Normal (mDist.) | Delta MTL |
-|----------------------|------------------|---------------|-----------------|-----------|
-|Single | 43.37	| 52.24	        |22.40| - |
-| Equal	               | 44.64	           | 43.32	        | 24.48	          | +3.57%    |
-| DWA	                 | 45.14            | 	43.06        | 	24.17          | 	+4.58%   |
-| GradDrop             | 45.39            | 43.23         | 24.18           | +4.65%    |
-| PCGrad               | 45.15            | 42.38         | 24.13           | +5.09%    |
-| Uncertainty          | 	45.98           | 	41.26        | 	24.09          | 	+6.50%   |
-| CAGrad               | 46.14            | 41.91         | 23.52           | +7.05%    |
-| Auto-Lambda          | 	47.17           | 	40.97	       | 23.68           | 	+8.21%   |
-| Auto-Lambda + CAGrad | 	48.26           | 	39.82	       | 22.81           | 	+11.07%  |
+| Method               | Type | Sem. Seg. (mIOU) | Depth (aErr.) | Normal (mDist.) | Delta MTL |
+|----------------------|-------|-----------|---------------|-----------------|-----------|
+|Single | - | 43.37	| 52.24	        |22.40| - |
+| Equal	               | W |44.64	           | 43.32	        | 24.48	          | +3.57%    |
+| DWA	                 | W |45.14            | 	43.06        | 	24.17          | 	+4.58%   |
+| GradDrop             | G |45.39            | 43.23         | 24.18           | +4.65%    |
+| PCGrad               | G | 45.15            | 42.38         | 24.13           | +5.09%    |
+| Uncertainty          | W |	45.98           | 	41.26        | 	24.09          | 	+6.50%   |
+| CAGrad               | G |46.14            | 41.91         | 23.52           | +7.05%    |
+| Auto-Lambda          | W |	47.17           | 	40.97	       | 23.68           | 	+8.21%   |
+| Auto-Lambda + CAGrad | W + G|	48.26           | 	39.82	       | 22.81           | 	+11.07%  |
 
 *Note: The results were averaged across three random seeds. You should expect the error range less than +/-1%.*
 
@@ -80,11 +80,11 @@ For standard 3 tasks in NYUv2 (without dense prediction task) in the multi-task 
 If you found this code/work to be useful in your own research, please considering citing the following:
 
 ```
-@article{liu2022auto-lambda,
-  title={Auto-Lambda: Disentangling Dynamic Task Relationships},
-  author={Liu, Shikun and James, Stephen and Davison, Andrew J and Johns, Edward},
-  journal={arXiv preprint arXiv:2202.03091},
-  year={2022}
+@article{liu2022auto_lambda,
+    title={Auto-Lambda: Disentangling Dynamic Task Relationships},
+    author={Liu, Shikun and James, Stephen and Davison, Andrew J and Johns, Edward},
+    journal={Transactions on Machine Learning Research},
+    year={2022}
 }
 ```
 
